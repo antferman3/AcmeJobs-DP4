@@ -352,6 +352,88 @@
 		<property name ="finalMode" value ="true" />
 		<property name ="employer" ref ="employer2Employer"/>
 	</bean>
+	
+	<!-- Workers  -->
+	
+	<bean name ="worker1UserAccount" class ="acme.framework.entities.UserAccount">
+		<property name ="username" value ="worker1" />
+		<property name ="password" value ="worker1" />
+		<property name ="enabled" value ="true" />
+		<property name ="identity">
+			<bean class= "acme.datatypes.UserIdentity">
+				<property name ="name" value ="Worker"/>
+				<property name ="surname" value = "One"/>
+				<property name ="email" value ="worker1@acme.com"/>
+			</bean>
+		</property>
+		<property name ="roles">
+			<list>
+				<ref bean ="worker1Worker"/>
+				<ref bean ="worker1Authenticated" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean name ="worker1Worker" class ="acme.entities.roles.Worker">
+		<property name ="skills" value ="Good at working in a team" />
+		<property name ="qualifications" value ="B2 Certificate" />
+		<property name ="userAccount" ref = "worker1UserAccount" />
+	</bean>
+	
+	<bean name ="worker1Authenticated" class ="acme.framework.entities.Authenticated">
+		<property name ="userAccount" ref="worker1UserAccount" />
+	</bean>
+	
+	
+	<bean name ="worker2UserAccount" class ="acme.framework.entities.UserAccount">
+		<property name ="username" value ="worker2" />
+		<property name ="password" value ="worker2" />
+		<property name ="enabled" value ="true" />
+		<property name ="identity">
+			<bean class= "acme.datatypes.UserIdentity">
+				<property name ="name" value ="Worker"/>
+				<property name ="surname" value = "Two"/>
+				<property name ="email" value ="worker2@acme.com"/>
+			</bean>
+		</property>
+		<property name ="roles">
+			<list>
+				<ref bean ="worker2Worker"/>
+				<ref bean = "worker2Authenticated" />
+			</list>
+		</property>
+	</bean>
+	
+	<bean name ="worker2Worker" class ="acme.entities.roles.Worker">
+		<property name ="skills" value ="Good at working alone" />
+		<property name ="qualifications" value ="C1 certificate" />
+		<property name ="userAccount" ref = "worker2UserAccount" />
+	</bean>
+	
+	<bean name ="worker2Authenticated" class ="acme.framework.entities.Authenticated">
+		<property name ="userAccount" ref = "worker2UserAccount" />
+	</bean>
+	
+	<bean id="application01" class="acme.entities.applications.Applications">
+		<property name="reference" value="abcd-efgh:ijkl"/>
+		<property name="moment" value="2016/06/15 12:00"/>
+		<property name="status" value="PENDING"/>
+		<property name="statement" value="It's very difficult to find a job"/>
+		<property name="skills" value="I'm good at working with groups"/>
+		<property name="qualifications" value="Certificate B2"/>
+		<property name ="worker" ref ="worker2Worker"/>
+	</bean>
+	
+	<bean id="application02" class="acme.entities.applications.Applications">
+		<property name="reference" value="abcd-efgh:ijkl"/>
+		<property name="moment" value="2016/06/15 12:00"/>
+		<property name="status" value="PENDING"/>
+		<property name="statement" value="I need a job please"/>
+		<property name="skills" value="I'm good at working alone"/>
+		<property name="qualifications" value="Certificate B2"/>
+		<property name ="worker" ref ="worker1Worker"/>
+	</bean>
+	
 </beans>
 
 
