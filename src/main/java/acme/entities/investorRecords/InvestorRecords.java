@@ -18,6 +18,7 @@ import lombok.Setter;
 @Setter
 public class InvestorRecords extends DomainEntity {
 
+	//asdasd
 	private static final long	serialVersionUID	= 1L;
 
 	@NotBlank
