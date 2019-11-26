@@ -87,8 +87,8 @@
        `id` integer not null,
         `version` integer not null,
         `user_account_id` integer,
-        `sector` varchar(255),
         `company` varchar(255),
+        `sector` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
