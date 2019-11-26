@@ -262,7 +262,7 @@
 		<property name ="roles">
 			<list>
 				<ref bean ="employer1Employer"/>
-				<ref bean = "employer1Authenticated" />
+				<ref bean ="employer1Authenticated" />
 			</list>
 		</property>
 	</bean>
@@ -274,7 +274,7 @@
 	</bean>
 	
 	<bean name ="employer1Authenticated" class ="acme.framework.entities.Authenticated">
-		<property name ="userAccount" ref = "employer1UserAccount" />
+		<property name ="userAccount" ref="employer1UserAccount" />
 	</bean>
 	
 	
@@ -315,9 +315,9 @@
 		<property name ="deadline" value = "2030/12/11 23:59"/>
 		<property name ="salary" value = "€ 15,000.98"/>
 		<property name ="description" value ="Lorem ipsum sit dolor amet."/>
-		<property name = "moreInfo" value = "http://www.example.com" />
+		<property name ="moreInfo" value = "http://www.example.com" />
 		<property name ="finalMode" value ="true" />
-		<property name ="employer" value ="employer1Employer"/>
+		<property name ="employer" ref ="employer1Employer"/>
 	</bean>
 	
 	<bean name ="job2" class="acme.entities.jobs.Job">
@@ -328,7 +328,7 @@
 		<property name ="description" value ="Lorem ipsum sit dolor amet."/>
 		<property name = "moreInfo" value = "http://www.example.com" />
 		<property name ="finalMode" value ="true" />
-		<property name ="employer" value ="employer1Employer"/>
+		<property name ="employer" ref ="employer1Employer"/>
 	</bean>
 
 	<bean name ="job3" class="acme.entities.jobs.Job">
@@ -339,7 +339,7 @@
 		<property name ="description" value ="Lorem ipsum sit dolor amet."/>
 		<property name = "moreInfo" value = "http://www.example.com" />
 		<property name ="finalMode" value ="true" />
-		<property name ="employer" value ="employer2Employer"/>
+		<property name ="employer" ref ="employer2Employer"/>
 	</bean>
 	
 	<bean name ="job4" class="acme.entities.jobs.Job">
@@ -350,7 +350,7 @@
 		<property name ="description" value ="Lorem ipsum sit dolor amet."/>
 		<property name = "moreInfo" value = "http://www.example.com" />
 		<property name ="finalMode" value ="true" />
-		<property name ="employer" value ="employer2Employer"/>
+		<property name ="employer" ref ="employer2Employer"/>
 	</bean>
 </beans>
 
