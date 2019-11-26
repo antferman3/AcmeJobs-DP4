@@ -51,7 +51,7 @@ public class Job extends DomainEntity {
 	private String				moreInfo;
 
 	private boolean				finalMode;
-
+	//asdasd
 	//Relationships
 
 	@NotNull
