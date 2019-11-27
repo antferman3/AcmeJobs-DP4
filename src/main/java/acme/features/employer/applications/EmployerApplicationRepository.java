@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.worker.application;
+package acme.features.employer.applications;
 
 import java.util.Collection;
 
@@ -21,13 +21,7 @@ import acme.entities.applications.Applications;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface WorkerApplicationRepository extends AbstractRepository {
-
-	@Query("select a from Applications a where a.id = ?1")
-	Applications findOneById(int id);
-
-	@Query("select a from Applications a where a.worker.id=?1")
-	Collection<Applications> findManyByWorkerId(int workerId);
+public interface EmployerApplicationRepository extends AbstractRepository {
 
 	@Query("select a from Applications a where a.job.employer.id=?1")
 	Collection<Applications> findManyByEmployerId(int employerId);

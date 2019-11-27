@@ -94,6 +94,15 @@ master.menu.provider.request2 = Create request
 master.menu.consumer = Consumer
 master.menu.consumer.offer-create = Create offer
 
+# master.menu.employer ##########################################################
+master.menu.employer= Employer
+master.menu.employer.job-list= List all my jobs
+master.menu.employer.applications-list= List all the applications made to my jobs
+
+# master.menu.worker ##########################################################
+master.menu.worker= Worker
+master.menu.worker.applications-list= List all the applications made to my jobs
+
 # master.menu.user-account ####################################################
 
 master.menu.user-account = Account

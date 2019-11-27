@@ -9,6 +9,10 @@
 
     alter table `applications` 
        drop 
+       foreign key `FKj2gllxnbrvk83wdygiyxdul40`;
+
+    alter table `applications` 
+       drop 
        foreign key `FKfott6wy710nqog2etbl4atl2c`;
 
     alter table `authenticated` 

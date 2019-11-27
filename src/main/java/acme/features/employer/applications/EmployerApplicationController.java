@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.worker.application;
+package acme.features.employer.applications;
 
 import javax.annotation.PostConstruct;
 
@@ -20,33 +20,30 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import acme.components.CustomCommand;
 import acme.entities.applications.Applications;
-import acme.entities.roles.Worker;
+import acme.entities.roles.Employer;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 
 @Controller
-@RequestMapping("/worker/applications/")
-public class WorkerApplicationController extends AbstractController<Worker, Applications> {
+@RequestMapping("/employer/applications/")
+public class EmployerApplicationController extends AbstractController<Employer, Applications> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private WorkerApplicationListMineService	listMineService;
+	private EmployerApplicationListMineService	employerMineService;
 
 	@Autowired
-	private WorkerApplicationShowService		showService;
-
-
+	EmployerApplicationShowService				showService;
 	// Constructors -----------------------------------------------------------
+
 
 	@PostConstruct
 	private void initialise() {
-		super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.listMineService);
-		//super.addCustomCommand(CustomCommand.LIST_MINE, BasicCommand.LIST, this.employerListMineService);
 
 		//super.addCustomCommand(CustomCommand.EMPLOYER_LIST_MINE, BasicCommand.LIST, this.employerListMineService);
+		super.addCustomCommand(CustomCommand.LIST_APPLICATIONS, BasicCommand.LIST, this.employerMineService);
 		super.addBasicCommand(BasicCommand.SHOW, this.showService);
-
 	}
 
 }
