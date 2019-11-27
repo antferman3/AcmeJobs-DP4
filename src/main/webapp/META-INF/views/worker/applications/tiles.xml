@@ -6,7 +6,7 @@
 	 
 	 
 <tiles-definitions>   
-	<definition name="worker/applications/list-mine" extends="master">
+	<definition name="worker/applications/list" extends="master">
 		<put-attribute name="body" type="template" value="../worker/applications/list.jsp"/>
 	</definition>
 	<definition name="worker/applications/form" extends="master">

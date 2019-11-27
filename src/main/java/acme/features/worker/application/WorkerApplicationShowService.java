@@ -1,14 +1,3 @@
-/*
- * AuthenticatedConsumerCreateService.java
- *
- * Copyright (c) 2019 Rafael Corchuelo.
- *
- * In keeping with the traditional purpose of furthering education and research, it is
- * the policy of the copyright owner to permit non-commercial use and redistribution of
- * this software. It has been tested carefully, but it is not guaranteed for any particular
- * purposes. The copyright owner does not offer any warranties or representations, nor do
- * they accept any liabilities with respect to them.
- */
 
 package acme.features.worker.application;
 
@@ -19,24 +8,34 @@ import acme.entities.applications.Applications;
 import acme.entities.roles.Worker;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
+import acme.framework.entities.Principal;
 import acme.framework.services.AbstractShowService;
 
 @Service
 public class WorkerApplicationShowService implements AbstractShowService<Worker, Applications> {
 
-	// Internal state ---------------------------------------------------------
-
 	@Autowired
-	private WorkerApplicationRepository repository;
-
-	// AbstractCreateService<Authenticated, Consumer> ---------------------------
+	WorkerApplicationRepository repository;
 
 
 	@Override
 	public boolean authorise(final Request<Applications> request) {
 		assert request != null;
 
-		return true;
+		boolean result;
+		int applicationId;
+		Applications application;
+		Worker worker;
+		Principal principal;
+
+		applicationId = request.getModel().getInteger("id");
+		application = this.repository.findOneById(applicationId);
+		worker = application.getWorker();
+		principal = request.getPrincipal();
+
+		result = worker.getUserAccount().getId() == principal.getAccountId();
+
+		return result;
 	}
 
 	@Override
@@ -45,17 +44,21 @@ public class WorkerApplicationShowService implements AbstractShowService<Worker,
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "reference", "moment", "status", "statement", "skills", "qualifications");
+		request.unbind(entity, model, "reference", "moment", "status");
+		request.unbind(entity, model, "statement", "skills", "qualifications");
 
 	}
 
 	@Override
 	public Applications findOne(final Request<Applications> request) {
 		assert request != null;
+
 		Applications result;
 		int id;
+
 		id = request.getModel().getInteger("id");
 		result = this.repository.findOneById(id);
+
 		return result;
 	}
 

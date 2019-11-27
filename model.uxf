@@ -634,8 +634,8 @@ NonCommercialBanner
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Employer
 --
-+ company: String{NotBlank}
-+ sector: String{NotBlank}</panel_attributes>
++ company: String {NotBlank}
++ sector: String {NotBlank}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -676,7 +676,7 @@ Employer
       <w>104</w>
       <h>104</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-&gt;
+    <panel_attributes>lt=&lt;-x
 m1=1
 m2=0..*
 Registered by ^</panel_attributes>

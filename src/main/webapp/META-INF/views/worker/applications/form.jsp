@@ -11,7 +11,7 @@
 	<acme:form-textbox code="worker.applications.form.label.status" path="status"/>
 	<acme:form-textarea code="worker.applications.form.label.statement" path="statement"/>
 	<acme:form-textarea code="worker.applications.form.label.skills" path="skills"/>
-	<acme:form-textarea code="worker.applications.form.label.qualification" path="qualification"/>
+	<acme:form-textarea code="worker.applications.form.label.qualification" path="qualifications"/>
 	
 	<acme:form-return code="administrator.announcement.form.button.return"/> 
 	

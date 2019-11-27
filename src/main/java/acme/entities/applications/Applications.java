@@ -48,10 +48,8 @@ public class Applications extends DomainEntity {
 	@NotBlank
 	private String				statement;
 
-	@NotBlank
 	private String				skills;
 
-	@NotBlank
 	private String				qualifications;
 
 	//Relationships
