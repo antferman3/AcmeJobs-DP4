@@ -6,6 +6,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.Valid;
@@ -35,6 +36,7 @@ public class Job extends DomainEntity {
 	@Pattern(regexp = "[A-Z0-9]{4}-[A-Z0-9]{4}$")
 	private String				reference;
 
+	private JobStatus			status;
 	@NotBlank
 	private String				title;
 
@@ -60,4 +62,10 @@ public class Job extends DomainEntity {
 	@Valid
 	@ManyToOne(optional = false)
 	private Employer			employer;
+
+	@NotNull
+	@Valid
+	@OneToOne(optional = false)
+	private Descriptor			descriptor;
+
 }
