@@ -19,5 +19,5 @@ public class Employer extends UserRole {
 	private String				company;
 
 	@NotBlank
-	private String				Sector;
+	private String				sector;
 }
