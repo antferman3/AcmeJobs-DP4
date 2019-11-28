@@ -7,6 +7,14 @@
        drop 
        foreign key FK_6lnbc6fo3om54vugoh8icg78m;
 
+    alter table `applications` 
+       drop 
+       foreign key `FKj2gllxnbrvk83wdygiyxdul40`;
+
+    alter table `applications` 
+       drop 
+       foreign key `FKfott6wy710nqog2etbl4atl2c`;
+
     alter table `authenticated` 
        drop 
        foreign key FK_h52w0f3wjoi68b63wv9vwon57;
@@ -44,6 +52,8 @@
     drop table if exists `announcement`;
 
     drop table if exists `anonymous`;
+
+    drop table if exists `applications`;
 
     drop table if exists `authenticated`;
 

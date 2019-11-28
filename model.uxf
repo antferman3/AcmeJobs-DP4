@@ -634,8 +634,8 @@ NonCommercialBanner
     <panel_attributes>&lt;&lt;Role&gt;&gt;
 Employer
 --
-+ company: String{NotBlank}
-+ sector: String{NotBlank}</panel_attributes>
++ company: String {NotBlank}
++ sector: String {NotBlank}</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
@@ -676,7 +676,7 @@ Employer
       <w>104</w>
       <h>104</h>
     </coordinates>
-    <panel_attributes>lt=&lt;-&gt;
+    <panel_attributes>lt=&lt;-x
 m1=1
 m2=0..*
 Registered by ^</panel_attributes>
@@ -685,7 +685,7 @@ Registered by ^</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>784</x>
+      <x>864</x>
       <y>336</y>
       <w>168</w>
       <h>72</h>
@@ -700,6 +700,55 @@ Worker
   <element>
     <id>UMLClass</id>
     <coordinates>
+
+      <x>1040</x>
+      <y>104</y>
+      <w>168</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;Stereotype&gt;&gt;
+Package::FatClass
+{Some Properties}
+--
+-id: Long
+_-ClassAttribute: Long_
+--
+#Operation(i: int): int
+/+AbstractOperation()/
+--
+Responsibilities
+-- Resp1
+*-- Resp2*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>680</x>
+      <y>232</y>
+      <w>280</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;330.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1000</x>
+      <y>488</y>
+      <w>352</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>Applications
+--
++ reference: String {Unique, NotBlank, Length(min=5,max=10)}
++ moment: Date {Temporal(TIMESTAMP),Past}
++ status: Enum {Enumerated(value = EnumType.STRING)}
++ statement: String {NotBlank}
++ skills: String {NotBlank}
++ qualifications: String {NotBlank}</panel_attributes>
+
       <x>792</x>
       <y>688</y>
       <w>176</w>
@@ -723,11 +772,24 @@ Worker
     <panel_attributes>Descriptor
 --
 + description: String {NotBlank}</panel_attributes>
+
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
+
+      <x>1000</x>
+      <y>400</y>
+      <w>80</w>
+      <h>104</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=0..*
+Made by ^</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+
       <x>592</x>
       <y>592</y>
       <w>72</w>
@@ -738,19 +800,31 @@ m1=1
 m2=1
 Describes</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
+
+      <x>864</x>
+      <y>528</y>
+      <w>152</w>
+
       <x>696</x>
       <y>704</y>
       <w>112</w>
+
       <h>40</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1=1
 m2=0..*
+
+&lt; Refers to</panel_attributes>
+    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
+
 Order</panel_attributes>
     <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+
   </element>
 </diagram>

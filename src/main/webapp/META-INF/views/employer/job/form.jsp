@@ -12,7 +12,6 @@
 	<acme:form-url code="employer.job.form.label.moreInfo" path="moreInfo"/>
 	<acme:form-textarea code="employer.job.form.label.description" path="description"/>
 	
-	
  
 	<acme:form-return code="employer.offer.form.button.return"/>  
 	

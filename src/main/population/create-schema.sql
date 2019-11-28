@@ -23,6 +23,20 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `applications` (
+       `id` integer not null,
+        `version` integer not null,
+        `moment` datetime(6),
+        `qualifications` varchar(255),
+        `reference` varchar(255),
+        `skills` varchar(255),
+        `statement` varchar(255),
+        `status` varchar(255),
+        `job_id` integer not null,
+        `worker_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `authenticated` (
        `id` integer not null,
         `version` integer not null,
@@ -293,6 +307,9 @@
 
     insert into `hibernate_sequence` values ( 1 );
 
+    alter table `applications` 
+       add constraint UK_qmntsmtvyncblodldilmi5ge4 unique (`reference`);
+
     alter table `job` 
        add constraint UK_qpodqtu8nvqkof3olnqnqcv2l unique (`descriptor_id`);
 
@@ -317,6 +334,16 @@
        add constraint FK_6lnbc6fo3om54vugoh8icg78m 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `applications` 
+       add constraint `FKj2gllxnbrvk83wdygiyxdul40` 
+       foreign key (`job_id`) 
+       references `job` (`id`);
+
+    alter table `applications` 
+       add constraint `FKfott6wy710nqog2etbl4atl2c` 
+       foreign key (`worker_id`) 
+       references `worker` (`id`);
 
     alter table `authenticated` 
        add constraint FK_h52w0f3wjoi68b63wv9vwon57 
