@@ -34,7 +34,7 @@ public class Auditors extends UserRole {
 	private String				firm;
 
 	@NotBlank
-	private String				responsiblyStatement;
+	private String				responsabilityStatement;
 
 	// Derived attributes -----------------------------------------------------
 

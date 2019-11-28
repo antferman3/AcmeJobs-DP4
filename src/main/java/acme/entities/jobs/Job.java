@@ -2,10 +2,13 @@
 package acme.entities.jobs;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -17,6 +20,7 @@ import javax.validation.constraints.Pattern;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.URL;
 
+import acme.entities.auditRecords.AuditRecord;
 import acme.entities.roles.Employer;
 import acme.framework.datatypes.Money;
 import acme.framework.entities.DomainEntity;
@@ -68,4 +72,9 @@ public class Job extends DomainEntity {
 	@OneToOne(optional = false)
 	private Descriptor			descriptor;
 
+	@NotNull
+	@Valid
+	@OneToMany
+	@JoinColumn(name = "JobId"/* , referencedColumnName = "job_id" */)
+	private List<AuditRecord>	auditRecord;
 }

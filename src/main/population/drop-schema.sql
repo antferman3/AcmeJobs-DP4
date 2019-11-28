@@ -15,6 +15,18 @@
        drop 
        foreign key `FKfott6wy710nqog2etbl4atl2c`;
 
+    alter table `audit_record` 
+       drop 
+       foreign key `FK1pmc57w7h34ruqs8mnii9ygrb`;
+
+    alter table `audit_record` 
+       drop 
+       foreign key `FKlbvbyimxf6pxvbhkdd4vfhlnd`;
+
+    alter table `auditors` 
+       drop 
+       foreign key FK_laye9g52ri2n2qx4i16wckydb;
+
     alter table `authenticated` 
        drop 
        foreign key FK_h52w0f3wjoi68b63wv9vwon57;
@@ -39,6 +51,10 @@
        drop 
        foreign key `FK3rxjf8uh6fh2u990pe8i2at0e`;
 
+    alter table `message` 
+       drop 
+       foreign key `FKn5adlx3oqjna7aupm8gwg3fuj`;
+
     alter table `provider` 
        drop 
        foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
@@ -54,6 +70,10 @@
     drop table if exists `anonymous`;
 
     drop table if exists `applications`;
+
+    drop table if exists `audit_record`;
+
+    drop table if exists `auditors`;
 
     drop table if exists `authenticated`;
 
@@ -84,6 +104,10 @@
     drop table if exists `investor_records`;
 
     drop table if exists `job`;
+
+    drop table if exists `message`;
+
+    drop table if exists `message_thread`;
 
     drop table if exists `non_commercial_banner`;
 
