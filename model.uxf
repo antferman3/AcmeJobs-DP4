@@ -653,7 +653,7 @@ Employer
     <id>UMLClass</id>
     <coordinates>
       <x>552</x>
-      <y>488</y>
+      <y>512</y>
       <w>320</w>
       <h>112</h>
     </coordinates>
@@ -674,13 +674,13 @@ Employer
       <x>672</x>
       <y>400</y>
       <w>104</w>
-      <h>104</h>
+      <h>128</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1=1
 m2=0..*
 Registered by ^</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -700,7 +700,6 @@ Worker
   <element>
     <id>UMLClass</id>
     <coordinates>
-
       <x>1040</x>
       <y>104</y>
       <w>168</w>
@@ -731,100 +730,5 @@ Responsibilities
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;330.0;130.0</additional_attributes>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>1000</x>
-      <y>488</y>
-      <w>352</w>
-      <h>112</h>
-    </coordinates>
-    <panel_attributes>Applications
---
-+ reference: String {Unique, NotBlank, Length(min=5,max=10)}
-+ moment: Date {Temporal(TIMESTAMP),Past}
-+ status: Enum {Enumerated(value = EnumType.STRING)}
-+ statement: String {NotBlank}
-+ skills: String {NotBlank}
-+ qualifications: String {NotBlank}</panel_attributes>
-
-      <x>792</x>
-      <y>688</y>
-      <w>176</w>
-      <h>64</h>
-    </coordinates>
-    <panel_attributes>Duty
---
-+ title: String {NotBlank}
-+ description: String {NotBlank}
-+ percentage: Double {NotNull}</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>552</x>
-      <y>696</y>
-      <w>152</w>
-      <h>56</h>
-    </coordinates>
-    <panel_attributes>Descriptor
---
-+ description: String {NotBlank}</panel_attributes>
-
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-
-      <x>1000</x>
-      <y>400</y>
-      <w>80</w>
-      <h>104</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-x
-m1=1
-m2=0..*
-Made by ^</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
-
-      <x>592</x>
-      <y>592</y>
-      <w>72</w>
-      <h>120</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-x
-m1=1
-m2=1
-Describes</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
-
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-
-      <x>864</x>
-      <y>528</y>
-      <w>152</w>
-
-      <x>696</x>
-      <y>704</y>
-      <w>112</w>
-
-      <h>40</h>
-    </coordinates>
-    <panel_attributes>lt=&lt;-x
-m1=1
-m2=0..*
-
-&lt; Refers to</panel_attributes>
-    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
-
-Order</panel_attributes>
-    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
-
   </element>
 </diagram>
