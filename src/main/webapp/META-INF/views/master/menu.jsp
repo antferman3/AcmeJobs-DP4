@@ -61,6 +61,7 @@
       		<acme:menu-suboption code="master.menu.authenticated.investorRecords-list" action="/authenticated/investor-records/list"/>
       		<acme:menu-suboption code="master.menu.authenticated.challenge-list" action="/authenticated/challenge/list"/>
 	  		<acme:menu-suboption code="master.menu.authenticated.records-list" action="/authenticated/records/list"/>
+	  		<acme:menu-suboption code="master.menu.authenticated.job-list" action="/authenticated/job/list"/>
 		
 		</acme:menu-option>
 		
@@ -90,6 +91,9 @@
 			<acme:menu-suboption code="master.menu.consumer.offer-create" action="/consumer/offer/create"/>
 		</acme:menu-option>
 		
+		<acme:menu-option code="master.menu.employer" access="hasRole('Employer')">
+			<acme:menu-suboption code="master.menu.employer.job-list" action="/employer/job/list-mine"/>
+		</acme:menu-option>
 	</acme:menu-left>
 
 	<acme:menu-right>

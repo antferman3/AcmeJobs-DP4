@@ -83,12 +83,29 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `descriptor` (
+       `id` integer not null,
+        `version` integer not null,
+        `description` varchar(255),
+        `duty_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `duty` (
+       `id` integer not null,
+        `version` integer not null,
+        `description` varchar(255),
+        `percentage` double precision,
+        `title` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `employer` (
        `id` integer not null,
         `version` integer not null,
         `user_account_id` integer,
-        `sector` varchar(255),
         `company` varchar(255),
+        `sector` varchar(255),
         primary key (`id`)
     ) engine=InnoDB;
 
@@ -153,7 +170,9 @@
         `reference` varchar(255),
         `salary_amount` double precision,
         `salary_currency` varchar(255),
+        `status` integer,
         `title` varchar(255),
+        `descriptor_id` integer not null,
         `employer_id` integer not null,
         primary key (`id`)
     ) engine=InnoDB;
@@ -275,6 +294,9 @@
     insert into `hibernate_sequence` values ( 1 );
 
     alter table `job` 
+       add constraint UK_qpodqtu8nvqkof3olnqnqcv2l unique (`descriptor_id`);
+
+    alter table `job` 
        add constraint UK_7jmfdvs0b0jx7i33qxgv22h7b unique (`reference`);
 
     alter table `offer` 
@@ -306,10 +328,20 @@
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
+    alter table `descriptor` 
+       add constraint `FK4nx1kwe4hcc4n1wt4pbpbgjy3` 
+       foreign key (`duty_id`) 
+       references `duty` (`id`);
+
     alter table `employer` 
        add constraint FK_na4dfobmeuxkwf6p75abmb2tr 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
+
+    alter table `job` 
+       add constraint `FKfqwyynnbcsq0htxho3vchpd2u` 
+       foreign key (`descriptor_id`) 
+       references `descriptor` (`id`);
 
     alter table `job` 
        add constraint `FK3rxjf8uh6fh2u990pe8i2at0e` 

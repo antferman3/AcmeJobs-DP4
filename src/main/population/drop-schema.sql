@@ -15,9 +15,17 @@
        drop 
        foreign key FK_6cyha9f1wpj0dpbxrrjddrqed;
 
+    alter table `descriptor` 
+       drop 
+       foreign key `FK4nx1kwe4hcc4n1wt4pbpbgjy3`;
+
     alter table `employer` 
        drop 
        foreign key FK_na4dfobmeuxkwf6p75abmb2tr;
+
+    alter table `job` 
+       drop 
+       foreign key `FKfqwyynnbcsq0htxho3vchpd2u`;
 
     alter table `job` 
        drop 
@@ -48,6 +56,10 @@
     drop table if exists `consumer`;
 
     drop table if exists `delgado_bulletin`;
+
+    drop table if exists `descriptor`;
+
+    drop table if exists `duty`;
 
     drop table if exists `employer`;
 

@@ -12,7 +12,11 @@
 	<acme:form-url code="employer.job.form.label.moreInfo" path="moreInfo"/>
 	<acme:form-textarea code="employer.job.form.label.description" path="description"/>
 	
-	
+	<acme:form-textbox code = "employer.job.form.label.status" path ="status"/>
+	<acme:form-textbox code ="employer.job.form.label.status" path ="descriptor.description"/>
+	<acme:form-textbox code ="employer.job.form.label.status" path ="descriptor.duty.title"/>
+	<acme:form-textbox code ="employer.job.form.label.status" path ="descriptor.duty.description"/>
+	<acme:form-textbox code ="employer.job.form.label.status" path ="descriptor.duty.percentage"/>
  
 	<acme:form-return code="employer.offer.form.button.return"/>  
 	
