@@ -398,11 +398,8 @@
 		<property name ="employer" ref ="employer2Employer"/>
 		<property name = "descriptor" ref ="descriptorJob4"/>
 		<property name = "status" value ="PUBLISHED"/>
-		<property name= "auditRecord" >
-		<list>
-			<ref bean="auditRecord03"/>
-			<ref bean="auditRecord05"/>
-		</list>
+		<property name= "auditRecord" ref="auditRecord03">
+		
 		</property>
 	</bean>
 	
