@@ -75,6 +75,6 @@ public class Job extends DomainEntity {
 	@NotNull
 	@Valid
 	@OneToMany
-	@JoinColumn(name = "JobId"/* , referencedColumnName = "job_id" */)
+	@JoinColumn(name = "JobId")
 	private List<AuditRecord>	auditRecord;
 }

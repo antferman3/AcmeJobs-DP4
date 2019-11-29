@@ -10,55 +10,52 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.auditor;
+package acme.features.auditor.auditRecord;
 
 import java.util.Collection;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.jobs.Job;
+import acme.entities.auditRecords.AuditRecord;
 import acme.entities.roles.Auditors;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
-import acme.framework.entities.Principal;
 import acme.framework.services.AbstractListService;
 
 @Service
-public class AuditorJobListMineService implements AbstractListService<Auditors, Job> {
+public class AuditorAuditRecordListService implements AbstractListService<Auditors, AuditRecord> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AuditorJobRepository repository;
+	private AuditorAuditRecordRepository repository;
 
 
 	@Override
-	public boolean authorise(final Request<Job> request) {
+	public boolean authorise(final Request<AuditRecord> request) {
 		assert request != null;
 
 		return true;
 	}
 
 	@Override
-	public void unbind(final Request<Job> request, final Job entity, final Model model) {
+	public void unbind(final Request<AuditRecord> request, final AuditRecord entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "reference", "title", "deadline");
+		request.unbind(entity, model, "status", "title", "moment");
 
 	}
 
 	@Override
-	public Collection<Job> findMany(final Request<Job> request) {
+	public Collection<AuditRecord> findMany(final Request<AuditRecord> request) {
 		assert request != null;
-		Collection<Job> result;
-
-		Principal principal;
-
-		principal = request.getPrincipal();
-		result = this.repository.findManyJob(principal.getActiveRoleId());
+		Collection<AuditRecord> result;
+		int id;
+		id = request.getModel().getInteger("id");
+		result = this.repository.findManyJob(id);
 		return result;
 	}
 

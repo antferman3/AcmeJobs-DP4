@@ -12,7 +12,9 @@
 	<acme:form-url code="auditor.job.form.label.moreInfo" path="moreInfo"/>
 	<acme:form-textarea code="auditor.job.form.label.description" path="description"/>
 	
- 
+ 	<acme:form>
+	<acme:form-return code="auditor.auditRecord.form.button.list" action="/auditors/audit-record/list"/>
+	</acme:form>
 	<acme:form-return code="auditor.offer.form.button.return"/>  
 	
 </acme:form>

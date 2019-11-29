@@ -2,6 +2,7 @@
 package acme.entities.messageThreads;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
@@ -34,5 +35,5 @@ public class MessageThread extends DomainEntity {
 	@OneToMany
 	@NotNull
 	@Valid
-	private Message				messages;
+	private List<Message>		messages;
 }

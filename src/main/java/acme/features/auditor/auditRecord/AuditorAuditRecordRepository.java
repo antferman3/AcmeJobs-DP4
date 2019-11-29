@@ -10,27 +10,24 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.auditor;
+package acme.features.auditor.auditRecord;
 
 import java.util.Collection;
 
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import acme.entities.jobs.Job;
+import acme.entities.auditRecords.AuditRecord;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AuditorJobRepository extends AbstractRepository {
+public interface AuditorAuditRecordRepository extends AbstractRepository {
 
-	@Query("select a from Job a where a.id = ?1")
-	Job findOneById(int id);
+	@Query("select a from AuditRecord a where a.id = ?1")
+	AuditRecord findOneById(int id);
 
-	@Query("select a from Job a join a.auditRecord r where r.auditor.id= ?1")
-	Collection<Job> findManyJob(int id);
-
-	@Query("select a from Job a join a.auditRecord r where not r.auditor.id= ?1")
-	Collection<Job> findNotMyJob(int id);
+	@Query("select a from AuditRecord a where a.job.id= ?1")
+	Collection<AuditRecord> findManyJob(int id);
 
 	/*
 	 * @Query("select a from Job a where a.auditRecord.auditor.id=?1")

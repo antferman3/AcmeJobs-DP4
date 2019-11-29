@@ -588,6 +588,7 @@
 		<property name="moment" value="2016/06/15 12:00"/>
 		<property name="body" value="body1"/>
 		<property name="auditor" ref="auditor1Auditor"/>
+		<property name="job" ref="job1"/>
 	</bean>
 	
 	<bean id="auditRecord02" class="acme.entities.auditRecords.AuditRecord">
@@ -596,6 +597,7 @@
 		<property name="moment" value="2016/06/15 12:00"/>
 		<property name="body" value="body2"/>
 		<property name="auditor" ref="auditor2Auditor"/>
+		<property name="job" ref="job3"/>
 	</bean>
 	
 	<bean id="auditRecord03" class="acme.entities.auditRecords.AuditRecord">
@@ -604,6 +606,7 @@
 		<property name="moment" value="2016/06/15 12:00"/>
 		<property name="body" value="body3"/>
 		<property name="auditor" ref="auditor1Auditor"/>
+		<property name="job" ref="job4"/>
 	</bean>
 	
 	<bean id="auditRecord04" class="acme.entities.auditRecords.AuditRecord">
@@ -612,6 +615,7 @@
 		<property name="moment" value="2016/06/15 12:00"/>
 		<property name="body" value="body4"/>
 		<property name="auditor" ref="auditor2Auditor"/>
+		<property name="job" ref="job2"/>
 	</bean>
 	
 	<bean id="auditRecord05" class="acme.entities.auditRecords.AuditRecord">
@@ -620,6 +624,7 @@
 		<property name="moment" value="2016/06/15 12:00"/>
 		<property name="body" value="body5"/>
 		<property name="auditor" ref="auditor2Auditor"/>
+		<property name="job" ref="job4"/>
 	</bean>
 </beans>
 
