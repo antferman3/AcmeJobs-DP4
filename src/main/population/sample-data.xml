@@ -375,7 +375,13 @@
 	
 	<bean name ="descriptorJob3" class ="acme.entities.jobs.Descriptor">
 		<property name ="description" value ="Description3" />
-		<property name ="duty" ref ="DutyDescriptorJob3" />
+		<property name="duty">
+			<list>
+				<ref bean="DutyDescriptorJob3" />
+				<ref bean="DutyDescriptorJob3" />
+				<ref bean="DutyDescriptorJob3" />
+			</list>
+		</property>
 	</bean>
 	
 	<bean name ="DutyDescriptorJob3" class ="acme.entities.jobs.Duty">

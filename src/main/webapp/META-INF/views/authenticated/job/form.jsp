@@ -11,7 +11,7 @@
 	<acme:form-money code="employer.job.form.label.salary" path="salary"/>
 	<acme:form-url code="employer.job.form.label.moreInfo" path="moreInfo"/>
 	<acme:form-textarea code="employer.job.form.label.description" path="description"/>
-	
+	<jstl:out value="${description}"/>
 	<acme:form-textbox code = "employer.job.form.label.status" path ="status"/>
 	<acme:form-textbox code ="employer.job.form.label.status" path ="descriptor.description"/>
 	<acme:form-textbox code ="employer.job.form.label.status" path ="descriptor.duty.title"/>
