@@ -25,7 +25,7 @@
 
     alter table `descriptor_duty` 
        drop 
-       foreign key `FKkfdnqohjxtpqbexax0q2tufan`;
+       foreign key `FK57eqqlhihwvd53ykpmsiqlx2p`;
 
     alter table `descriptor_duty` 
        drop 

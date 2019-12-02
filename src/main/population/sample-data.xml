@@ -324,7 +324,7 @@
 	
 	<bean name ="descriptorJob1" class ="acme.entities.jobs.Descriptor">
 		<property name ="description" value ="Description1" />
-		<property name ="duty" ref ="DutyDescriptorJob1" />
+		<property name ="duties" ref ="DutyDescriptorJob1" />
 	</bean>
 	
 	<bean name ="DutyDescriptorJob1" class ="acme.entities.jobs.Duty">
@@ -350,7 +350,7 @@
 	
 	<bean name ="descriptorJob2" class ="acme.entities.jobs.Descriptor">
 		<property name ="description" value ="Description2" />
-		<property name ="duty" ref ="DutyDescriptorJob2" />
+		<property name ="duties" ref ="DutyDescriptorJob2" />
 	</bean>
 	
 	<bean name ="DutyDescriptorJob2" class ="acme.entities.jobs.Duty">
@@ -370,12 +370,12 @@
 		<property name ="finalMode" value ="true" />
 		<property name ="employer" ref ="employer2Employer"/>
 		<property name = "descriptor" ref ="descriptorJob3"/>
-		<property name = "status" value ="DRAFT"/>
+		<property name = "status" value ="PUBLISHED"/>
 	</bean>
 	
 	<bean name ="descriptorJob3" class ="acme.entities.jobs.Descriptor">
 		<property name ="description" value ="Description3" />
-		<property name="duty">
+		<property name="duties">
 			<list>
 				<ref bean="DutyDescriptorJob3" />
 				<ref bean="DutyDescriptorJob5" />
@@ -414,7 +414,7 @@
 	
 	<bean name ="descriptorJob4" class ="acme.entities.jobs.Descriptor">
 		<property name ="description" value ="Description4" />
-		<property name ="duty" ref ="DutyDescriptorJob4" />
+		<property name ="duties" ref ="DutyDescriptorJob4" />
 	</bean>
 	
 	<bean name ="DutyDescriptorJob4" class ="acme.entities.jobs.Duty">

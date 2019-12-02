@@ -106,7 +106,7 @@
 
     create table `descriptor_duty` (
        `descriptor_id` integer not null,
-        `duty_id` integer not null
+        `duties_id` integer not null
     ) engine=InnoDB;
 
     create table `duty` (
@@ -315,7 +315,7 @@
        add constraint UK_qmntsmtvyncblodldilmi5ge4 unique (`reference`);
 
     alter table `descriptor_duty` 
-       add constraint UK_8vrjy2e5jhfnph4um4uqikkih unique (`duty_id`);
+       add constraint UK_kvr5rclgwa51d625rmx13ke96 unique (`duties_id`);
 
     alter table `job` 
        add constraint UK_qpodqtu8nvqkof3olnqnqcv2l unique (`descriptor_id`);
@@ -363,8 +363,8 @@
        references `user_account` (`id`);
 
     alter table `descriptor_duty` 
-       add constraint `FKkfdnqohjxtpqbexax0q2tufan` 
-       foreign key (`duty_id`) 
+       add constraint `FK57eqqlhihwvd53ykpmsiqlx2p` 
+       foreign key (`duties_id`) 
        references `duty` (`id`);
 
     alter table `descriptor_duty` 
