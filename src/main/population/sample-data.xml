@@ -378,12 +378,21 @@
 		<property name="duty">
 			<list>
 				<ref bean="DutyDescriptorJob3" />
-				<ref bean="DutyDescriptorJob3" />
-				<ref bean="DutyDescriptorJob3" />
+				<ref bean="DutyDescriptorJob5" />
+				<ref bean="DutyDescriptorJob6" />
 			</list>
 		</property>
 	</bean>
-	
+	<bean name ="DutyDescriptorJob5" class ="acme.entities.jobs.Duty">
+		<property name ="title" value ="Duty5" />
+		<property name ="description" value ="Description duty 5" />
+		<property name ="percentage" value = "55" />
+	</bean>
+	<bean name ="DutyDescriptorJob6" class ="acme.entities.jobs.Duty">
+		<property name ="title" value ="Duty6" />
+		<property name ="description" value ="Description duty 6" />
+		<property name ="percentage" value = "96" />
+	</bean>
 	<bean name ="DutyDescriptorJob3" class ="acme.entities.jobs.Duty">
 		<property name ="title" value ="Duty3" />
 		<property name ="description" value ="Description duty 3" />
