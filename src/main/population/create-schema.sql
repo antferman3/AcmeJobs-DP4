@@ -37,6 +37,28 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `audit_record` (
+       `id` integer not null,
+        `version` integer not null,
+        `body` varchar(255),
+        `moment` datetime(6),
+        `status` varchar(255),
+        `title` varchar(255),
+        `auditor_id` integer not null,
+        `audit_record_id` integer not null,
+        `job_id` integer,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `auditors` (
+       `id` integer not null,
+        `version` integer not null,
+        `user_account_id` integer,
+        `firm` varchar(255),
+        `responsability_statement` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
     create table `authenticated` (
        `id` integer not null,
         `version` integer not null,
@@ -195,6 +217,30 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `message` (
+       `id` integer not null,
+        `version` integer not null,
+        `body` varchar(255),
+        `moment` datetime(6),
+        `tags` varchar(255),
+        `title` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `message_thread` (
+       `id` integer not null,
+        `version` integer not null,
+        `moment` datetime(6),
+        `title` varchar(255),
+        `users` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `message_thread_message` (
+       `message_thread_id` integer not null,
+        `messages_id` integer not null
+    ) engine=InnoDB;
+
     create table `non_commercial_banner` (
        `id` integer not null,
         `version` integer not null,
@@ -323,6 +369,9 @@
     alter table `job` 
        add constraint UK_7jmfdvs0b0jx7i33qxgv22h7b unique (`reference`);
 
+    alter table `message_thread_message` 
+       add constraint UK_bx8ll7j8be93gcj4mnbmvm2rk unique (`messages_id`);
+
     alter table `offer` 
        add constraint UK_iex7e8fs0fh89yxpcnm1orjkm unique (`ticker`);
 
@@ -351,6 +400,26 @@
        add constraint `FKfott6wy710nqog2etbl4atl2c` 
        foreign key (`worker_id`) 
        references `worker` (`id`);
+
+    alter table `audit_record` 
+       add constraint `FK1pmc57w7h34ruqs8mnii9ygrb` 
+       foreign key (`auditor_id`) 
+       references `auditors` (`id`);
+
+    alter table `audit_record` 
+       add constraint `FKcbaasa68d3ilgf4cwifs32bi3` 
+       foreign key (`audit_record_id`) 
+       references `job` (`id`);
+
+    alter table `audit_record` 
+       add constraint `FKlbvbyimxf6pxvbhkdd4vfhlnd` 
+       foreign key (`job_id`) 
+       references `job` (`id`);
+
+    alter table `auditors` 
+       add constraint FK_laye9g52ri2n2qx4i16wckydb 
+       foreign key (`user_account_id`) 
+       references `user_account` (`id`);
 
     alter table `authenticated` 
        add constraint FK_h52w0f3wjoi68b63wv9vwon57 
@@ -386,6 +455,16 @@
        add constraint `FK3rxjf8uh6fh2u990pe8i2at0e` 
        foreign key (`employer_id`) 
        references `employer` (`id`);
+
+    alter table `message_thread_message` 
+       add constraint `FKka0a2jm3m6obl7wa6586cqyp4` 
+       foreign key (`messages_id`) 
+       references `message` (`id`);
+
+    alter table `message_thread_message` 
+       add constraint `FKp1bkunf5gyu1vtt1q3f2djagy` 
+       foreign key (`message_thread_id`) 
+       references `message_thread` (`id`);
 
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 
