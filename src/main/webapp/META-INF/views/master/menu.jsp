@@ -79,7 +79,10 @@
 			<acme:menu-suboption code="master.menu.administrator.noncommercialBanner" action="/administrator/non-commercial-banner/list" />
 			<acme:menu-separator/>
 			<acme:menu-suboption code="master.menu.administrator.spam-list" action="/administrator/spam/list"/>
-
+			<acme:menu-separator/>
+			<acme:menu-suboption code="master.menu.administrator.dashboard" action="/administrator/dashboard/show"/>
+			<acme:menu-suboption code="master.menu.administrator.chart" action="/administrator/chart/show"/>
+			
 		</acme:menu-option>
 
 		<acme:menu-option code="master.menu.provider" access="hasRole('Provider')">

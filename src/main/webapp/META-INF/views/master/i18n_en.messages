@@ -84,7 +84,8 @@ master.menu.administrator.records-list= Company records
 master.menu.administrator.commercialBanner= Commercial banner
 master.menu.administrator.noncommercialBanner= Non commercial banner
 
-
+master.menu.administrator.dashboard= Dashboard
+master.menu.administrator.chart= Chart
 # master.menu.provider ########################################################
 
 master.menu.provider = Provider
