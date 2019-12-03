@@ -685,8 +685,8 @@ Registered by ^</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>864</x>
-      <y>336</y>
+      <x>920</x>
+      <y>360</y>
       <w>168</w>
       <h>72</h>
     </coordinates>
@@ -725,10 +725,115 @@ Responsibilities
     <coordinates>
       <x>680</x>
       <y>232</y>
-      <w>280</w>
-      <h>120</h>
+      <w>336</w>
+      <h>144</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;330.0;130.0</additional_attributes>
+    <additional_attributes>10.0;10.0;400.0;160.0</additional_attributes>
   </element>
+
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>984</x>
+      <y>496</y>
+      <w>320</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>Applications
+--
++ reference: String {Unique, NotBlank, Length(min=5,max=10)}
++ moment: Date {Temporal(TIMESTAMP), Past}
++ status: Enum {Enumerated(value= EnumType.STRING)}
++ statement: String {NotBlank}
++ skills: String {NotBlank}
++ qualifications: String {NotBlank}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1000</x>
+      <y>424</y>
+      <w>80</w>
+      <h>88</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=0..*
+Made by ^
+</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>864</x>
+      <y>544</y>
+      <w>136</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1 
+m2=0..*
+&lt; Apply for</panel_attributes>
+    <additional_attributes>10.0;20.0;150.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>688</y>
+      <w>176</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Descriptor
+--
++ description: String {NotBlank}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>864</x>
+      <y>680</y>
+      <w>184</w>
+      <h>72</h>
+    </coordinates>
+    <panel_attributes>Duty
+--
++ title: String {NotBlank}
++ description: String {NotBlank}
++ precentage: Double {NotNull}</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>624</x>
+      <y>592</y>
+      <w>88</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=1
+Describes ^</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>728</x>
+      <y>704</y>
+      <w>152</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-x
+m1=1
+m2=0..*
+&lt; Order</panel_attributes>
+    <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
+  </element>
+
 </diagram>

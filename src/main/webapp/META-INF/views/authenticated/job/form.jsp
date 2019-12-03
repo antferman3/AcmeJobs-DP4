@@ -2,6 +2,7 @@
 
 <%@taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="acme" tagdir="/WEB-INF/tags"%>
+<%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix = "c" %>
 
 <acme:form>
 	
@@ -11,13 +12,19 @@
 	<acme:form-money code="authenticated.job.form.label.salary" path="salary"/>
 	<acme:form-url code="authenticated.job.form.label.moreInfo" path="moreInfo"/>
 	<acme:form-textarea code="authenticated.job.form.label.description" path="description"/>
-	
 	<acme:form-textbox code = "authenticated.job.form.label.status" path ="status"/>
 	<acme:form-textbox code ="authenticated.job.form.label.descriptor.description" path ="descriptor.description"/>
-	<acme:form-textbox code ="authenticated.job.form.label.descriptor.duty.title" path ="descriptor.duty.title"/>
-	<acme:form-textbox code ="authenticated.job.form.label.descriptor.duty.description" path ="descriptor.duty.description"/>
-	<acme:form-textbox code ="authenticated.job.form.label.descriptor.duty.percentage" path ="descriptor.duty.percentage"/>
- 
-	<acme:form-return code="authenticated.job.form.button.return"/>  
+
+	<jstl:forEach var="duty" items="${duties}">
+			<acme:form-panel code="authenticated.job.form.panel.descriptor.duties">
+				<acme:print value="${duty.title}"/> <br/>
+				<acme:print value="${duty.description}"/><br/>
+				<acme:print value="${duty.percentage}"/> % <br/>
+				<br/>
+			</acme:form-panel>
+		</jstl:forEach>
+
+	<acme:form-return code="employer.offer.form.button.return"/>  
+
 	
 </acme:form>
