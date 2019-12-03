@@ -302,6 +302,7 @@
 		<property name ="employer" ref ="employer1Employer"/>
 		<property name = "descriptor" ref ="descriptorJob1"/>
 		<property name = "status" value ="DRAFT"/>
+		<property name="auditRecord" ref="auditRecord01"/>
 	</bean>
 	
 	<bean name ="descriptorJob1" class ="acme.entities.jobs.Descriptor">
@@ -328,6 +329,7 @@
 		<property name ="employer" ref ="employer1Employer"/>
 		<property name = "descriptor" ref ="descriptorJob2"/>
 		<property name = "status" value ="PUBLISHED"/>
+		<property name= "auditRecord" ref="auditRecord04"/>
 	</bean>
 	
 	<bean name ="descriptorJob2" class ="acme.entities.jobs.Descriptor">
@@ -352,7 +354,9 @@
 		<property name ="finalMode" value ="true" />
 		<property name ="employer" ref ="employer2Employer"/>
 		<property name = "descriptor" ref ="descriptorJob3"/>
+
 		<property name = "status" value ="PUBLISHED"/>
+
 	</bean>
 	
 	<bean name ="descriptorJob3" class ="acme.entities.jobs.Descriptor">
@@ -392,6 +396,9 @@
 		<property name ="employer" ref ="employer2Employer"/>
 		<property name = "descriptor" ref ="descriptorJob4"/>
 		<property name = "status" value ="PUBLISHED"/>
+		<property name= "auditRecord" ref="auditRecord03">
+		
+		</property>
 	</bean>
 	
 	<bean name ="descriptorJob4" class ="acme.entities.jobs.Descriptor">
@@ -510,6 +517,7 @@
 		<property name="job" ref="job4"/>
 	</bean>
 	
+
 		
 	<!--  Sponsors -->
 	<bean name ="sponsor1UserAccount" class ="acme.framework.entities.UserAccount">
@@ -521,16 +529,35 @@
 				<property name ="name" value ="Sponsor1"/>
 				<property name ="surname" value = "One"/>
 				<property name ="email" value ="sponsor1@acme.com"/>
+
+	<!-- Auditors  -->
+	
+	<bean name ="auditor1UserAccount" class ="acme.framework.entities.UserAccount">
+		<property name ="username" value ="auditor1" />
+		<property name ="password" value ="auditor1" />
+		<property name ="enabled" value ="true" />
+		<property name ="identity">
+			<bean class= "acme.datatypes.UserIdentity">
+				<property name ="name" value ="Auditor"/>
+				<property name ="surname" value = "One"/>
+				<property name ="email" value ="auditor1@acme.com"/>
+
 			</bean>
 		</property>
 		<property name ="roles">
 			<list>
+
 				<ref bean ="sponsor1Sponsor"/>
 				<ref bean ="sponsor1Authenticated" />
+
+				<ref bean ="auditor1Auditor"/>
+				<ref bean ="auditor1Authenticated" />
+
 			</list>
 		</property>
 	</bean>
 	
+
 	<bean name ="sponsor1Sponsor" class ="acme.entities.roles.Sponsor">
 		<property name ="organisationName" value ="Sponsor 1, Inc." />
 		<property name ="creditCard" value ="9191919191919191" />
@@ -550,16 +577,43 @@
 				<property name ="name" value ="Sponsor2"/>
 				<property name ="surname" value = "Two"/>
 				<property name ="email" value ="sponsor2@acme.com"/>
+
+	<bean name ="auditor1Auditor" class ="acme.entities.roles.Auditors">
+		<property name ="firm" value ="firm1" />
+		<property name ="responsabilityStatement" value ="Statement1" />
+		<property name ="userAccount" ref = "auditor1UserAccount" />
+	</bean>
+	
+	<bean name ="auditor1Authenticated" class ="acme.framework.entities.Authenticated">
+		<property name ="userAccount" ref="auditor1UserAccount" />
+	</bean>
+	
+	<bean name ="auditor2UserAccount" class ="acme.framework.entities.UserAccount">
+		<property name ="username" value ="auditor2" />
+		<property name ="password" value ="auditor2" />
+		<property name ="enabled" value ="true" />
+		<property name ="identity">
+			<bean class= "acme.datatypes.UserIdentity">
+				<property name ="name" value ="Auditor"/>
+				<property name ="surname" value = "Two"/>
+				<property name ="email" value ="auditor2@acme.com"/>
+
 			</bean>
 		</property>
 		<property name ="roles">
 			<list>
+
 				<ref bean ="sponsor2Sponsor"/>
 				<ref bean ="sponsor2Authenticated" />
+
+				<ref bean ="auditor2Auditor"/>
+				<ref bean ="auditor2Authenticated" />
+
 			</list>
 		</property>
 	</bean>
 	
+
 	<bean name ="sponsor2Sponsor" class ="acme.entities.roles.Sponsor">
 		<property name ="organisationName" value ="Sponsor 2, Inc." />
 		<property name ="creditCard" value="4166944713599133"/>
@@ -590,7 +644,65 @@
 		<property name="sponsor" ref="sponsor2Sponsor" />
 	</bean>
 	
+
+	<bean name ="auditor2Auditor" class ="acme.entities.roles.Auditors">
+		<property name ="firm" value ="firm2" />
+		<property name ="responsabilityStatement" value ="Statement2" />
+		<property name ="userAccount" ref = "auditor2UserAccount" />
+	</bean>
 	
+	<bean name ="auditor2Authenticated" class ="acme.framework.entities.Authenticated">
+		<property name ="userAccount" ref="auditor2UserAccount" />
+	</bean>
+	
+	
+	<!-- Audit Records -->
+	
+	<bean id="auditRecord01" class="acme.entities.auditRecords.AuditRecord">
+		<property name="title" value="auditRecord01"/>
+		<property name="status" value="DRAFT"/>
+		<property name="moment" value="2016/06/15 12:00"/>
+		<property name="body" value="body1"/>
+		<property name="auditor" ref="auditor1Auditor"/>
+		<property name="job" ref="job1"/>
+	</bean>
+	
+	<bean id="auditRecord02" class="acme.entities.auditRecords.AuditRecord">
+		<property name="title" value="auditRecord02"/>
+		<property name="status" value="DRAFT"/>
+		<property name="moment" value="2016/06/15 12:00"/>
+		<property name="body" value="body2"/>
+		<property name="auditor" ref="auditor2Auditor"/>
+		<property name="job" ref="job3"/>
+	</bean>
+	
+	<bean id="auditRecord03" class="acme.entities.auditRecords.AuditRecord">
+		<property name="title" value="auditRecord03"/>
+		<property name="status" value="DRAFT"/>
+		<property name="moment" value="2016/06/15 12:00"/>
+		<property name="body" value="body3"/>
+		<property name="auditor" ref="auditor1Auditor"/>
+		<property name="job" ref="job4"/>
+	</bean>
+	
+	<bean id="auditRecord04" class="acme.entities.auditRecords.AuditRecord">
+		<property name="title" value="auditRecord04"/>
+		<property name="status" value="DRAFT"/>
+		<property name="moment" value="2016/06/15 12:00"/>
+		<property name="body" value="body4"/>
+		<property name="auditor" ref="auditor2Auditor"/>
+		<property name="job" ref="job2"/>
+	</bean>
+	
+	<bean id="auditRecord05" class="acme.entities.auditRecords.AuditRecord">
+		<property name="title" value="auditRecord05"/>
+		<property name="status" value="DRAFT"/>
+		<property name="moment" value="2016/06/15 12:00"/>
+		<property name="body" value="body5"/>
+		<property name="auditor" ref="auditor2Auditor"/>
+		<property name="job" ref="job4"/>
+	</bean>
+
 </beans>
 
 
