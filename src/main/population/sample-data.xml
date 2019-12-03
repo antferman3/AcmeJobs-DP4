@@ -518,6 +518,18 @@
 	</bean>
 	
 
+	<bean id="application05" class="acme.entities.applications.Applications">
+		<property name="reference" value="EMP1-JOB1:WRK2"/>
+		<property name="moment" value="2016/06/15 12:00"/>
+		<property name="status" value="PENDING"/>
+		<property name="statement" value="I'm very funny"/>
+		<property name="skills" value="I'm good at doing nothing"/>
+		<property name="qualifications" value=""/>
+		<property name ="worker" ref ="worker2Worker"/>
+		<property name="job" ref="job1"/>
+	</bean>
+	
+
 		
 	<!--  Sponsors -->
 	<bean name ="sponsor1UserAccount" class ="acme.framework.entities.UserAccount">
@@ -702,6 +714,7 @@
 		<property name="auditor" ref="auditor2Auditor"/>
 		<property name="job" ref="job4"/>
 	</bean>
+
 
 </beans>
 

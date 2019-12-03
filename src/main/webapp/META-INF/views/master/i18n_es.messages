@@ -86,6 +86,8 @@ master.menu.administrator.challenge = Desafíos
 master.menu.administrator.commercialBanner= Banner comercial
 master.menu.administrator.noncommercialBanner=Banner no comercial
 
+master.menu.administrator.dashboard= Tablero
+master.menu.administrator.chart= Gráfica
 
 # master.menu.provider ########################################################
 
