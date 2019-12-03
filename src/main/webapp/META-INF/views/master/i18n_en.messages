@@ -105,6 +105,7 @@ master.menu.employer.applications-list= List all the applications made to my job
 
 master.menu.sponsor= Sponsor
 master.menu.sponsor.commercial-banner-list= List all my commercial banners
+master.menu.sponsor.non-commercial-banner-list= List all my non commercial banners
 
 # master.menu.worker ##########################################################
 master.menu.worker= Worker

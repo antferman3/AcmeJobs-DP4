@@ -107,6 +107,7 @@ master.menu.employer.applications-list= Listar todas las solicitudes de mis trab
 # master.menu.sponsor ##########################################################
 master.menu.sponsor= Esponsor
 master.menu.sponsor.commercial-banner-list= Listar todos mis banners comerciales
+master.menu.sponsor.commercial-non-banner-list= Listar todos mis banners no comerciales
 
 # master.menu.worker ##########################################################
 master.menu.worker= Trabajador
