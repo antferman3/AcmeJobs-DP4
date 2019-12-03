@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.auditor.auditRecord;
+package acme.features.authenticated.auditRecord;
 
 import java.util.Collection;
 
@@ -21,17 +21,18 @@ import acme.entities.auditRecords.AuditRecord;
 import acme.framework.repositories.AbstractRepository;
 
 @Repository
-public interface AuditorAuditRecordRepository extends AbstractRepository {
+public interface AuthenticatedAuditRecordRepository extends AbstractRepository {
 
 	@Query("select a from AuditRecord a where a.id = ?1")
-	AuditRecord findOneById(int id);
+	AuditRecord findOneAuditById(int id);
 
-	@Query("select a from AuditRecord a where a.job.id= ?1")
-	Collection<AuditRecord> findManyAuditorReferedToJob(int id);
+	@Query("select a from AuditRecord a where a.auditor.id = ?1")
+	Collection<AuditRecord> findManyByAuditorId(int auditorId);
 
-	/*
-	 * @Query("select a from Job a where a.auditRecord.auditor.id=?1")
-	 * Collection<Job> findManyJobByAuditorId(int auditorId);
-	 */
+	@Query("select a from AuditRecord a")
+	Collection<AuditRecord> findManyAll();
+
+	@Query("select a from AuditRecord a where a.AuditRecord.id = ?1 and a.finalMode = true")
+	Collection<AuditRecord> findManyAuditsReferedToAuditRecord(int AuditRecordId);
 
 }
