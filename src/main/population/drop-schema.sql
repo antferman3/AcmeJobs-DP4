@@ -15,9 +15,29 @@
        drop 
        foreign key `FKfott6wy710nqog2etbl4atl2c`;
 
+    alter table `audit_record` 
+       drop 
+       foreign key `FK1pmc57w7h34ruqs8mnii9ygrb`;
+
+    alter table `audit_record` 
+       drop 
+       foreign key `FKcbaasa68d3ilgf4cwifs32bi3`;
+
+    alter table `audit_record` 
+       drop 
+       foreign key `FKlbvbyimxf6pxvbhkdd4vfhlnd`;
+
+    alter table `auditors` 
+       drop 
+       foreign key FK_laye9g52ri2n2qx4i16wckydb;
+
     alter table `authenticated` 
        drop 
        foreign key FK_h52w0f3wjoi68b63wv9vwon57;
+
+    alter table `commercial_banner` 
+       drop 
+       foreign key `FKd0k52g7lcacefcp62kb4p9aor`;
 
     alter table `consumer` 
        drop 
@@ -43,6 +63,7 @@
        drop 
        foreign key `FK3rxjf8uh6fh2u990pe8i2at0e`;
 
+
     alter table `message` 
        drop 
        foreign key `FKn5adlx3oqjna7aupm8gwg3fuj`;
@@ -55,9 +76,26 @@
        drop 
        foreign key `FKtchis3o5qij98x87mty6hdk4d`;
 
+    alter table `non_commercial_banner` 
+       drop 
+       foreign key `FKpcpr0xb5k7s4rxv5pulstt5v9`;
+
+    alter table `message_thread_message` 
+       drop 
+       foreign key `FKka0a2jm3m6obl7wa6586cqyp4`;
+
+    alter table `message_thread_message` 
+       drop 
+       foreign key `FKp1bkunf5gyu1vtt1q3f2djagy`;
+
+
     alter table `provider` 
        drop 
        foreign key FK_b1gwnjqm6ggy9yuiqm0o4rlmd;
+
+    alter table `sponsor` 
+       drop 
+       foreign key FK_20xk0ev32hlg96kqynl6laie2;
 
     alter table `worker` 
        drop 
@@ -70,6 +108,10 @@
     drop table if exists `anonymous`;
 
     drop table if exists `applications`;
+
+    drop table if exists `audit_record`;
+
+    drop table if exists `auditors`;
 
     drop table if exists `authenticated`;
 
@@ -107,7 +149,11 @@
 
     drop table if exists `message_thread`;
 
+
     drop table if exists `message_thread_user_account`;
+
+    drop table if exists `message_thread_message`;
+
 
     drop table if exists `non_commercial_banner`;
 
@@ -124,6 +170,8 @@
     drop table if exists `soto_bulletin`;
 
     drop table if exists `spam`;
+
+    drop table if exists `sponsor`;
 
     drop table if exists `user_account`;
 

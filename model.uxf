@@ -653,7 +653,7 @@ Employer
     <id>UMLClass</id>
     <coordinates>
       <x>552</x>
-      <y>488</y>
+      <y>512</y>
       <w>320</w>
       <h>112</h>
     </coordinates>
@@ -674,13 +674,13 @@ Employer
       <x>672</x>
       <y>400</y>
       <w>104</w>
-      <h>104</h>
+      <h>128</h>
     </coordinates>
     <panel_attributes>lt=&lt;-x
 m1=1
 m2=0..*
 Registered by ^</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;140.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
@@ -731,6 +731,7 @@ Responsibilities
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
     <additional_attributes>10.0;10.0;400.0;160.0</additional_attributes>
   </element>
+
   <element>
     <id>UMLClass</id>
     <coordinates>
@@ -834,4 +835,5 @@ m2=0..*
 &lt; Order</panel_attributes>
     <additional_attributes>10.0;20.0;170.0;20.0</additional_attributes>
   </element>
+
 </diagram>

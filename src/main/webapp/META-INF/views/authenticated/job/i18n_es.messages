@@ -1,12 +1,15 @@
-employer.job.form.label.reference = Referencia
-employer.job.form.label.title = Título
-employer.job.form.label.deadline = Fecha de vencimiento
-employer.job.form.label.salary = Salario
-employer.job.form.label.moreInfo = Más info
-employer.job.form.label.description = Descripción
-employer.offer.form.button.return = Volver
-
-
-employer.job.list.label.reference = Referencia
-employer.job.list.label.deadline = Fecha de Vencimiento
-employer.job.list.label.title = Título
+authenticated.job.form.label.reference = Referencia
+authenticated.job.form.label.title = Título
+authenticated.job.form.label.deadline = Fecha de vencimiento
+authenticated.job.form.label.salary = Salario
+authenticated.job.form.label.moreInfo = Más info
+authenticated.job.form.label.description = Descripción
+authenticated.job.form.button.return = Volver
+authenticated.job.form.label.descriptor.duty.description = Descripción del deber
+authenticated.job.form.label.descriptor.duty.percentage = Porcentaje del deber
+authenticated.job.form.label.descriptor.duty.title = Título del deber
+authenticated.job.form.label.descriptor.description = Descripción del descriptor
+authenticated.job.form.label.status = Estado
+authenticated.job.list.label.reference = Referencia
+authenticated.job.list.label.description = Descripción
+authenticated.job.list.label.title = Título
