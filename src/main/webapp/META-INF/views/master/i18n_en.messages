@@ -97,14 +97,20 @@ master.menu.consumer.offer-create = Create offer
 
 # master.menu.employer ##########################################################
 
-master.menu.employer= Employer
-master.menu.employer.job-list= List all my jobs
-master.menu.employer.applications-list= List all the applications made to my jobs
+master.menu.employer = Employer
+master.menu.employer.job-list = List all my jobs
+master.menu.employer.applications-list = List all the applications made to my jobs
+
+# master.menu.sponsor ##########################################################
+
+master.menu.sponsor = Sponsor
+master.menu.sponsor.commercial-banner-list = List my commercial banners
+master.menu.sponsor.commercial-non-banner-list = List my non commercial banners
 
 # master.menu.worker ##########################################################
+
 master.menu.worker= Worker
 master.menu.worker.applications-list= List all the applications made to my jobs
-
 
 # master.menu.user-account ####################################################
 
@@ -116,8 +122,11 @@ master.menu.user-account.consumer = Consumer data
 master.menu.user-account.become-consumer = Become a consumer
 master.menu.user-account.become-employer = Become an employer
 master.menu.user-account.employer = Employer data
+master.menu.user-account.become-sponsor = Become a sponsor
+master.menu.user-account.sponsor = Sponsor data
 master.menu.user-account.become-worker = Become a worker
 master.menu.user-account.worker = Worker data
+
 # master.footer ###############################################################
 
 master.footer.title.about = About us
