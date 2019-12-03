@@ -195,6 +195,29 @@
         primary key (`id`)
     ) engine=InnoDB;
 
+    create table `message` (
+       `id` integer not null,
+        `version` integer not null,
+        `body` varchar(255),
+        `moment` datetime(6),
+        `title` varchar(255),
+        `message_thread_id` integer not null,
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `message_thread` (
+       `id` integer not null,
+        `version` integer not null,
+        `moment` datetime(6),
+        `title` varchar(255),
+        primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `message_thread_user_account` (
+       `message_thread_id` integer not null,
+        `users_id` integer not null
+    ) engine=InnoDB;
+
     create table `non_commercial_banner` (
        `id` integer not null,
         `version` integer not null,
@@ -386,6 +409,21 @@
        add constraint `FK3rxjf8uh6fh2u990pe8i2at0e` 
        foreign key (`employer_id`) 
        references `employer` (`id`);
+
+    alter table `message` 
+       add constraint `FKn5adlx3oqjna7aupm8gwg3fuj` 
+       foreign key (`message_thread_id`) 
+       references `message_thread` (`id`);
+
+    alter table `message_thread_user_account` 
+       add constraint `FKnbmip5t870fxbecafgaxvyde8` 
+       foreign key (`users_id`) 
+       references `user_account` (`id`);
+
+    alter table `message_thread_user_account` 
+       add constraint `FKtchis3o5qij98x87mty6hdk4d` 
+       foreign key (`message_thread_id`) 
+       references `message_thread` (`id`);
 
     alter table `provider` 
        add constraint FK_b1gwnjqm6ggy9yuiqm0o4rlmd 

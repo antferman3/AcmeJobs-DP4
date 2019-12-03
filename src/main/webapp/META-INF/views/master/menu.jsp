@@ -62,6 +62,7 @@
       		<acme:menu-suboption code="master.menu.authenticated.challenge-list" action="/authenticated/challenge/list"/>
 	  		<acme:menu-suboption code="master.menu.authenticated.records-list" action="/authenticated/records/list"/>
 	  		<acme:menu-suboption code="master.menu.authenticated.job-list" action="/authenticated/job/list"/>
+	  		<acme:menu-suboption code="master.menu.authenticated.list-message-thread" action="/authenticated/message-thread/list"/>
 		
 		</acme:menu-option>
 		
