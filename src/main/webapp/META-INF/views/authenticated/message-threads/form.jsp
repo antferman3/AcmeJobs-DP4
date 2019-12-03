@@ -20,7 +20,7 @@
 	<acme:form-moment code="authenticated.message-threads.form.label.moment" path="moment"/>
 	<acme:form-panel code="authenticated.message-threads.form.label.authenticateds">
 		<jstl:forEach var="authenticated" items="${usersAccount}">
-			<acme:print value="${user.username}"/> <br/>
+			<acme:print value="${authenticated.username}"/> <br/>
 		</jstl:forEach>
 	</acme:form-panel>
 	<br/>

@@ -45,7 +45,6 @@ public class AuthenticatedMessageThreadShowService implements AbstractShowServic
 
 		id = request.getModel().getInteger("id");
 		res = this.repository.findOneMessageThreadById(id);
-		res.getAuthenticateds().size();
 		res.getAuthenticateds().forEach(x -> x.getRoles().size());
 
 		return res;
