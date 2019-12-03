@@ -1,5 +1,5 @@
 
-package acme.entities.messageThreads;
+package acme.entities.messages;
 
 import java.util.Collection;
 import java.util.Date;
@@ -29,15 +29,15 @@ public class MessageThread extends DomainEntity {
 	@NotBlank
 	private String							title;
 
-	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
+	@NotNull
 	private Date							moment;
 
 	// Relationships ----------------------------------------------------------
 
 	@NotEmpty
 	@ManyToMany
-	private Collection<@Valid UserAccount>	users;
+	private Collection<@Valid UserAccount>	authenticateds;
 
 }

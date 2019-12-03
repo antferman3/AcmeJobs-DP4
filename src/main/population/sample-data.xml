@@ -530,10 +530,10 @@
 	
 	
 		
-	<bean id="messageThread01" class="acme.entities.messageThreads.MessageThread">
-		<property name= "title" value= "Message thread1"/>
-		<property name= "moment" value= "2019/04/10 14:00"/>
-		<property name= "users">
+	<bean id="messageThread001" class="acme.entities.messages.MessageThread">
+		<property name= "title" value= "Message thread001"/>
+		<property name= "moment" value= "2010/12/12 12:13"/>
+		<property name= "authenticateds">
 			<list>
 				<ref bean="employer2UserAccount"/>
 				<ref bean="employer1UserAccount"/>
@@ -541,10 +541,10 @@
 		</property>
 	</bean> 
 	
-	<bean id="messageThread02" class="acme.entities.messageThreads.MessageThread">
-		<property name= "title" value= "Message thread2"/>
-		<property name= "moment" value= "2018/04/25 14:00"/>
-		<property name= "users">
+	<bean id="messageThread002" class="acme.entities.messages.MessageThread">
+		<property name= "title" value= "Message thread002"/>
+		<property name= "moment" value= "2010/12/12 12:12"/>
+		<property name= "authenticateds">
 			<list>
 				<ref bean="employer1UserAccount"/>
 				<ref bean="employer2UserAccount"/>
@@ -554,62 +554,69 @@
 	
 	<!-- Messages -->
 	
-	<bean id="message01" class="acme.entities.messages.Message">
-		<property name= "title" value= "Message"/>
-		<property name= "moment" value= "2019/04/10 14:00"/>
-		<property name= "body" value= "This is a message from the coordinator."/>
-		<property name= "messageThread" ref= "messageThread01"/>
-	</bean> 
-	
-	<bean id="message02" class="acme.entities.messages.Message">
-		<property name= "title" value= "Old message"/>
-		<property name= "moment" value= "2012/02/26 13:34"/>
-		<property name= "body" value= "This is a message from time ago."/>
-		<property name= "messageThread" ref= "messageThread01"/>
-	</bean> 
-	
-	<bean id="message03" class="acme.entities.messages.Message">
-		<property name= "title" value= "New message"/>
-		<property name= "moment" value= "2019/12/02 18:46"/>
-		<property name= "body" value= "This is a message of a new application."/>
-		<property name= "messageThread" ref= "messageThread01"/>
-	</bean> 
-		
-	<bean id="message04" class="acme.entities.messages.Message">
-		<property name= "title" value= "Testing message"/>
-		<property name= "moment" value= "2019/04/11 15:00"/>
-		<property name= "body" value= "This is a message testing the thread."/>
-		<property name= "messageThread" ref= "messageThread01"/>
-	</bean> 
-		
-	<bean id="message05" class="acme.entities.messages.Message">
-		<property name= "title" value= "Winter"/>
-		<property name= "moment" value= "2018/12/11 17:00"/>
-		<property name= "body" value= "It is starting to get cold."/>
-		<property name= "messageThread" ref= "messageThread01"/>
-	</bean> 
-		
-	<bean id="message07" class="acme.entities.messages.Message">
-		<property name= "title" value= "Christmas"/>
-		<property name= "moment" value= "2017/12/25 12:00"/>
-		<property name= "body" value= "Merry Christmas to everybody!"/>
-		<property name= "messageThread" ref= "messageThread02"/>
-	</bean> 
-		
-	<bean id="message08" class="acme.entities.messages.Message">
-		<property name= "title" value= "New year"/>
-		<property name= "moment" value= "2019/01/01 00:30"/>
-		<property name= "body" value= "Happy new year to everyone reading this thread!"/>
-		<property name= "messageThread" ref= "messageThread02"/>
-	</bean> 
-		
-	<bean id="message09" class="acme.entities.messages.Message">
-		<property name= "title" value= "Summer"/>
-		<property name= "moment" value= "2019/08/25 18:00"/>
-		<property name= "body" value= "I am enjoying my holidays in a beautiful beach."/>
+	<bean id="message001" class="acme.entities.messages.Message">
+		<property name= "title" value= "Message 001"/>
+		<property name= "moment" value="2016/09/22 21:00"/>
+		<property name = "tags" value =" #dp #acme #jobs"/>
+		<property name= "body" value= "Body message 001"/>
 		<property name= "messageThread" ref= "messageThread02"/>
 	</bean> 
 	
+	<bean id="message002" class="acme.entities.messages.Message">
+		<property name= "title" value= "Message 002"/>
+		<property name= "moment" value= "2019/12/01 14:29"/>
+		<property name = "tags" value =" #dp #acme #jobs"/>
+		<property name= "body" value= "Body message 002"/>
+		<property name= "messageThread" ref= "messageThread01"/>
+	</bean> 
+	
+	<bean id="message003" class="acme.entities.messages.Message">
+		<property name= "title" value= "Message 003"/>
+		<property name= "moment" value= "2018/01/12 13:29"/>
+		<property name = "tags" value =" #dp #acme #jobs"/>
+		<property name= "body" value= "Body message 003"/>
+		<property name= "messageThread" ref= "messageThread02"/>
+	</bean> 
+		
+	<bean id="message004" class="acme.entities.messages.Message">
+		<property name= "title" value= "Message 004"/>
+		<property name= "moment" value= "2015/12/10 23:45"/>
+		<property name = "tags" value =" #dp #acme #jobs"/>
+		<property name= "body" value= "Body message 004"/>
+		<property name= "messageThread" ref= "messageThread01"/>
+	</bean> 
+		
+	<bean id="message005" class="acme.entities.messages.Message">
+		<property name= "title" value= "Message 005"/>
+		<property name= "moment" value= "2011/12/24 17:00"/>
+		<property name = "tags" value =" #dp #acme #jobs"/>
+		<property name= "body" value= "Body message 005"/>
+		<property name= "messageThread" ref= "messageThread02"/>
+	</bean> 
+		
+	<bean id="message006" class="acme.entities.messages.Message">
+		<property name= "title" value= "Message 006"/>
+		<property name= "moment" value= "2015/03/12 12:34"/>
+		<property name = "tags" value =" #dp #acme #jobs"/>
+		<property name= "body" value= "Body message 006"/>
+		<property name= "messageThread" ref= "messageThread01"/>
+	</bean> 
+		
+	<bean id="message007" class="acme.entities.messages.Message">
+		<property name= "title" value= "Message 007"/>
+		<property name= "moment" value= "2011/10/21 10:56"/>
+		<property name = "tags" value =" #dp #acme #jobs"/>
+		<property name= "body" value= "Body message 007"/>
+		<property name= "messageThread" ref= "messageThread02"/>
+	</bean> 
+		
+	<bean id="message008" class="acme.entities.messages.Message">
+		<property name= "title" value= "Message 008"/>
+		<property name= "moment" value= "2012/02/12 12:20"/>
+		<property name = "tags" value =" #dp #acme #jobs"/>
+		<property name= "body" value= "Body message 008"/>
+		<property name= "messageThread" ref= "messageThread01"/>
+	</bean> 
 	
 </beans>
 

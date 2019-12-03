@@ -32,7 +32,7 @@ public class AuthenticatedMessageListService implements AbstractListService<Auth
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "moment");
+		request.unbind(entity, model, "title", "moment", "tags");
 
 	}
 

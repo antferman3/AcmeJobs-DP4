@@ -12,7 +12,6 @@ import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
-import acme.entities.messageThreads.MessageThread;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -23,25 +22,23 @@ import lombok.Setter;
 public class Message extends DomainEntity {
 
 	private static final long	serialVersionUID	= 1L;
-
 	@NotBlank
 	private String				title;
-
-	@NotNull
 	@Temporal(TemporalType.TIMESTAMP)
 	@Past
+	@NotNull
 	private Date				moment;
 
-	//	private Collection<@NotBlank String>	tags;
+	@NotBlank
+	private String				tags;
 
 	@NotBlank
 	private String				body;
 
 	// Relationships ----------------------------------------------------------
-
-	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
+	@NotNull
 	private MessageThread		messageThread;
 
 }

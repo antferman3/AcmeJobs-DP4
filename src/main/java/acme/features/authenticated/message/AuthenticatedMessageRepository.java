@@ -12,9 +12,9 @@ import acme.framework.repositories.AbstractRepository;
 @Repository
 public interface AuthenticatedMessageRepository extends AbstractRepository {
 
-	@Query("select m from Message m where m.messageThread.id = ?1")
+	@Query("select a from Message a where a.messageThread.id=?1")
 	Collection<Message> findMany(int id);
 
-	@Query("select m from Message m where m.id = ?1")
+	@Query("select a from Message a where a.id=?1")
 	Message findOne(int id);
 }
