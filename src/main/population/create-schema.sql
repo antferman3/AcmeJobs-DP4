@@ -200,6 +200,7 @@
         `version` integer not null,
         `body` varchar(255),
         `moment` datetime(6),
+        `tags` varchar(255),
         `title` varchar(255),
         `message_thread_id` integer not null,
         primary key (`id`)
@@ -215,7 +216,7 @@
 
     create table `message_thread_user_account` (
        `message_thread_id` integer not null,
-        `users_id` integer not null
+        `authenticateds_id` integer not null
     ) engine=InnoDB;
 
     create table `non_commercial_banner` (
@@ -416,8 +417,8 @@
        references `message_thread` (`id`);
 
     alter table `message_thread_user_account` 
-       add constraint `FKnbmip5t870fxbecafgaxvyde8` 
-       foreign key (`users_id`) 
+       add constraint `FKtglq9xf20msr37ngr5q0x35d0` 
+       foreign key (`authenticateds_id`) 
        references `user_account` (`id`);
 
     alter table `message_thread_user_account` 

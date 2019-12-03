@@ -20,5 +20,6 @@
 	<acme:form-moment code="authenticated.message.form.label.moment" path="moment"/>
 	<acme:form-textarea code="authenticated.message.form.label.body" path="body"/>
 	
+	
   	<acme:form-return code="authenticated.message-threads.form.button.return"/>
 </acme:form>

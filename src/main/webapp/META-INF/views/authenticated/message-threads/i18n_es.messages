@@ -10,7 +10,7 @@
 
 authenticated.message-threads.form.label.title = Título
 authenticated.message-threads.form.label.moment = Momento
-authenticated.message-threads.form.label.users = Usuarios
+authenticated.message-threads.form.label.authenticateds = Autenticados
 
 authenticated.message-threads.form.button.return = Volver
 authenticated.message-threads.form.button.messages = Mensajes del hilo

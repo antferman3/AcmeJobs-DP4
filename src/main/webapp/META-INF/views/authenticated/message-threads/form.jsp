@@ -18,8 +18,8 @@
 <acme:form>
 	<acme:form-textbox code="authenticated.message-threads.form.label.title" path="title"/>
 	<acme:form-moment code="authenticated.message-threads.form.label.moment" path="moment"/>
-	<acme:form-panel code="authenticated.message-threads.form.label.users">
-		<jstl:forEach var="user" items="${usersAccount}">
+	<acme:form-panel code="authenticated.message-threads.form.label.authenticateds">
+		<jstl:forEach var="authenticated" items="${usersAccount}">
 			<acme:print value="${user.username}"/> <br/>
 		</jstl:forEach>
 	</acme:form-panel>

@@ -67,6 +67,7 @@ master.menu.authenticated.investorRecords-list= List investor records
 master.menu.authenticated.challenge-list= List challenges
 master.menu.authenticated.records-list= List company records
 master.menu.authenticated.job-list = List jobs
+master.menu.authenticated.list-message-thread= List messages threads
 
 # master.menu.administrator ###################################################
 

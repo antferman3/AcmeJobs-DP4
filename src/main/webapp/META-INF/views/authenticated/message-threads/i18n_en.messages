@@ -10,7 +10,7 @@
 
 authenticated.message-threads.form.label.title = Title
 authenticated.message-threads.form.label.moment = Moment
-authenticated.message-threads.form.label.users = Users
+authenticated.message-threads.form.label.authenticateds = Authenticateds
 
 authenticated.message-threads.form.button.return = Return
 authenticated.message-threads.form.button.messages = Thread's messages
