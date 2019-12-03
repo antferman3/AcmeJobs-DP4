@@ -10,7 +10,7 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.auditRecord;
+package acme.features.authenticated.messageThreads;
 
 import javax.annotation.PostConstruct;
 
@@ -18,22 +18,22 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import acme.entities.auditRecords.AuditRecord;
+import acme.entities.messageThreads.MessageThread;
 import acme.framework.components.BasicCommand;
 import acme.framework.controllers.AbstractController;
 import acme.framework.entities.Authenticated;
 
 @Controller
-@RequestMapping("/authenticated/audit-record/")
-public class AuthenticatedAuditRecordController extends AbstractController<Authenticated, AuditRecord> {
+@RequestMapping("/authenticated/message-threads/")
+public class AuthenticatedMessageThreadsController extends AbstractController<Authenticated, MessageThread> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AuthenticatedAuditRecordListService	listService;
+	private AuthenticatedMessageThreadsListService	listService;
 
 	@Autowired
-	private AuthenticatedAuditRecordShowService	showService;
+	private AuthenticatedMessageThreadsShowService	showService;
 
 
 	// Constructors -----------------------------------------------------------

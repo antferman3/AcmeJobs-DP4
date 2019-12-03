@@ -10,51 +10,51 @@
  * they accept any liabilities with respect to them.
  */
 
-package acme.features.authenticated.auditRecord;
-
-import java.util.Collection;
+package acme.features.authenticated.messageThreads;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import acme.entities.auditRecords.AuditRecord;
+import acme.entities.messageThreads.MessageThread;
 import acme.framework.components.Model;
 import acme.framework.components.Request;
 import acme.framework.entities.Authenticated;
-import acme.framework.services.AbstractListService;
+import acme.framework.services.AbstractShowService;
 
 @Service
-public class AuthenticatedAuditRecordListService implements AbstractListService<Authenticated, AuditRecord> {
+public class AuthenticatedMessageThreadsShowService implements AbstractShowService<Authenticated, MessageThread> {
 
 	// Internal state ---------------------------------------------------------
 
 	@Autowired
-	private AuthenticatedAuditRecordRepository repository;
+	private AuthenticatedMessageThreadsRepository repository;
+
+	// AbstractCreateService<Authenticated, Consumer> ---------------------------
 
 
 	@Override
-	public boolean authorise(final Request<AuditRecord> request) {
+	public boolean authorise(final Request<MessageThread> request) {
 		assert request != null;
 
 		return true;
 	}
 
 	@Override
-	public void unbind(final Request<AuditRecord> request, final AuditRecord entity, final Model model) {
+	public void unbind(final Request<MessageThread> request, final MessageThread entity, final Model model) {
 		assert request != null;
 		assert entity != null;
 		assert model != null;
 
-		request.unbind(entity, model, "title", "moment", "body");
-
+		request.unbind(entity, model, "title", "moment");
 	}
 
 	@Override
-	public Collection<AuditRecord> findMany(final Request<AuditRecord> request) {
+	public MessageThread findOne(final Request<MessageThread> request) {
 		assert request != null;
-		Collection<AuditRecord> result;
-		int id = request.getModel().getInteger("id");
-		result = this.repository.findManyAuditsReferedToAuditRecord(id);
+		MessageThread result;
+		int id;
+		id = request.getModel().getInteger("id");
+		result = this.repository.findOneMessageById(id);
 		return result;
 	}
 
