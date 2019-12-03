@@ -101,8 +101,12 @@
        `id` integer not null,
         `version` integer not null,
         `description` varchar(255),
-        `duty_id` integer not null,
         primary key (`id`)
+    ) engine=InnoDB;
+
+    create table `descriptor_duty` (
+       `descriptor_id` integer not null,
+        `duties_id` integer not null
     ) engine=InnoDB;
 
     create table `duty` (
@@ -310,6 +314,9 @@
     alter table `applications` 
        add constraint UK_qmntsmtvyncblodldilmi5ge4 unique (`reference`);
 
+    alter table `descriptor_duty` 
+       add constraint UK_kvr5rclgwa51d625rmx13ke96 unique (`duties_id`);
+
     alter table `job` 
        add constraint UK_qpodqtu8nvqkof3olnqnqcv2l unique (`descriptor_id`);
 
@@ -355,10 +362,15 @@
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
-    alter table `descriptor` 
-       add constraint `FK4nx1kwe4hcc4n1wt4pbpbgjy3` 
-       foreign key (`duty_id`) 
+    alter table `descriptor_duty` 
+       add constraint `FK57eqqlhihwvd53ykpmsiqlx2p` 
+       foreign key (`duties_id`) 
        references `duty` (`id`);
+
+    alter table `descriptor_duty` 
+       add constraint `FKqitedkrksd2w8qyp1fp5eao9f` 
+       foreign key (`descriptor_id`) 
+       references `descriptor` (`id`);
 
     alter table `employer` 
        add constraint FK_na4dfobmeuxkwf6p75abmb2tr 
