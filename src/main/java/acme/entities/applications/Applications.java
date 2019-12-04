@@ -44,13 +44,15 @@ public class Applications extends DomainEntity {
 	private Date				moment;
 
 	@Enumerated(value = EnumType.STRING)
+	@NotNull
 	private Status				status;
 
 	@NotBlank
 	private String				statement;
 
+	@NotNull
 	private String				skills;
-
+	@NotNull
 	private String				qualifications;
 
 	//Relationships
