@@ -17,15 +17,15 @@
 
     alter table `audit_record` 
        drop 
-       foreign key `FK1pmc57w7h34ruqs8mnii9ygrb`;
-
-    alter table `audit_record` 
-       drop 
-       foreign key `FKcbaasa68d3ilgf4cwifs32bi3`;
+       foreign key `FKdcrrgv6rkfw2ruvdja56un4ji`;
 
     alter table `audit_record` 
        drop 
        foreign key `FKlbvbyimxf6pxvbhkdd4vfhlnd`;
+
+    alter table `auditor` 
+       drop 
+       foreign key FK_clqcq9lyspxdxcp6o4f3vkelj;
 
     alter table `auditors` 
        drop 
@@ -63,7 +63,6 @@
        drop 
        foreign key `FK3rxjf8uh6fh2u990pe8i2at0e`;
 
-
     alter table `message` 
        drop 
        foreign key `FKn5adlx3oqjna7aupm8gwg3fuj`;
@@ -79,15 +78,6 @@
     alter table `non_commercial_banner` 
        drop 
        foreign key `FKpcpr0xb5k7s4rxv5pulstt5v9`;
-
-    alter table `message_thread_message` 
-       drop 
-       foreign key `FKka0a2jm3m6obl7wa6586cqyp4`;
-
-    alter table `message_thread_message` 
-       drop 
-       foreign key `FKp1bkunf5gyu1vtt1q3f2djagy`;
-
 
     alter table `provider` 
        drop 
@@ -110,6 +100,8 @@
     drop table if exists `applications`;
 
     drop table if exists `audit_record`;
+
+    drop table if exists `auditor`;
 
     drop table if exists `auditors`;
 
@@ -149,11 +141,7 @@
 
     drop table if exists `message_thread`;
 
-
     drop table if exists `message_thread_user_account`;
-
-    drop table if exists `message_thread_message`;
-
 
     drop table if exists `non_commercial_banner`;
 

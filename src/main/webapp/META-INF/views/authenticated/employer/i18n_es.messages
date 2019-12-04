@@ -11,7 +11,7 @@
 authenticated.employer.form.title.create = Hazte empleador
 authenticated.employer.form.title.update = Actualiza tus datos de empleador
 
-authenticated.employer.form.label.compañía = Compañía
+authenticated.employer.form.label.company = Compañía
 authenticated.employer.form.label.sector = Sector
 
 authenticated.employer.form.button.create = Registrar

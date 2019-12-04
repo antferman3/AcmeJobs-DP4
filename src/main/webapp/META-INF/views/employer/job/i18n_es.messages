@@ -6,6 +6,7 @@ employer.job.form.label.moreInfo = Más info
 employer.job.form.label.description = Descripción
 employer.offer.form.button.return = Volver
 
+employer.job.form.panel.descriptor.duties = Panel de servicios
 
 employer.job.list.label.reference = Referencia
 employer.job.list.label.deadline = Fecha de Vencimiento

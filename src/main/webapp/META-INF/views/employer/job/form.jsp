@@ -11,6 +11,17 @@
 	<acme:form-money code="employer.job.form.label.salary" path="salary"/>
 	<acme:form-url code="employer.job.form.label.moreInfo" path="moreInfo"/>
 	<acme:form-textarea code="employer.job.form.label.description" path="description"/>
+		<acme:form-textbox code ="authenticated.job.form.label.descriptor.description" path ="descriptor.description"/>
+
+	<jstl:forEach var="duty" items="${duties}">
+			<acme:form-panel code="employer.job.form.panel.descriptor.duties">
+				<acme:print value="${duty.title}"/> <br/>
+				<acme:print value="${duty.description}"/><br/>
+				<acme:print value="${duty.percentage}"/> % <br/>
+				<br/>
+			</acme:form-panel>
+		</jstl:forEach>
+	
 	
  
 	<acme:form-return code="employer.offer.form.button.return"/>  

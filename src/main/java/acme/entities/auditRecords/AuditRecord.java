@@ -6,7 +6,6 @@ import java.util.Date;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
-import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
@@ -16,7 +15,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
 
 import acme.entities.jobs.Job;
-import acme.entities.roles.Auditors;
+import acme.entities.roles.Auditor;
 import acme.framework.entities.DomainEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -46,12 +45,11 @@ public class AuditRecord extends DomainEntity {
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	private Auditors			auditor;
+	private Auditor			auditor;
 
 	@NotNull
 	@Valid
 	@ManyToOne(optional = false)
-	@JoinColumn(name = "AuditRecordId")
 	private Job					job;
 
 }

@@ -110,9 +110,10 @@
 			<acme:menu-suboption code="master.menu.worker.applications-list" action="/worker/applications/list-mine"/>
 		</acme:menu-option>
 		
-		<acme:menu-option code="master.menu.auditor" access="hasRole('Auditors')">
-			<acme:menu-suboption code="master.menu.auditor.my-job-list" action="/auditors/job/list_mine"/>			
-			<acme:menu-suboption code="master.menu.auditor.not-my-job-list" action="/auditors/job/list_others"/>
+		<acme:menu-option code="master.menu.auditor" access="hasRole('Auditor')">
+			<acme:menu-suboption code="master.menu.auditor.mineJobs-list" action="/auditor/job/LIST_MINE_JOBS"/>
+			<acme:menu-suboption code="master.menu.auditor.nonMineJobs-list" action="/auditor/non-job/LIST_NON_MINE"/>
+		
 		</acme:menu-option>
 		
 	</acme:menu-left>
@@ -134,12 +135,13 @@
 
 			<acme:menu-suboption code="master.menu.user-account.become-sponsor" action="/authenticated/sponsor/create" access="!hasRole('Sponsor')"/>
 			<acme:menu-suboption code="master.menu.user-account.sponsor" action="/authenticated/sponsor/update" access="hasRole('Sponsor')"/>
-
-			<acme:menu-suboption code="master.menu.user-account.auditor" action="/authenticated/auditor/update" access="hasRole('Auditor')"/>
-			<acme:menu-suboption code="master.menu.user-account.become-auditor" action="/authenticated/auditor/create" access="!hasRole('Auditor')"/>
 			
+			<acme:menu-suboption code="master.menu.user-account.become-auditor" action="/authenticated/auditor/create" access="!hasRole('Auditor')"/>
+			<acme:menu-suboption code="master.menu.user-account.auditor" action="/authenticated/auditor/update" access="hasRole('Auditor')"/>
 
 		</acme:menu-option>
+
+		
 
 		<acme:menu-option code="master.menu.sign-out" action="/master/sign-out" access="isAuthenticated()"/>
 	</acme:menu-right>

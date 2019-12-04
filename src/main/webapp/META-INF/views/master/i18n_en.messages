@@ -109,6 +109,10 @@ master.menu.sponsor = Sponsor
 master.menu.sponsor.commercial-banner-list = List my commercial banners
 master.menu.sponsor.commercial-non-banner-list = List my non commercial banners
 
+# master.menu.auditor ##########################################################
+master.menu.auditor = Auditor
+master.menu.auditor.mineJobs-list = List jobs with my auditor record
+master.menu.auditor.nonMineJobs-list = List jobs without my auditor record
 # master.menu.worker ##########################################################
 
 master.menu.worker= Worker
@@ -128,6 +132,8 @@ master.menu.user-account.become-sponsor = Become a sponsor
 master.menu.user-account.sponsor = Sponsor data
 master.menu.user-account.become-worker = Become a worker
 master.menu.user-account.worker = Worker data
+master.menu.user-account.become-auditor = Become an auditor
+master.menu.user-account.auditor = Auditor data
 
 # master.footer ###############################################################
 
