@@ -37,8 +37,8 @@ public class AuditorNonMineJobAuditListService implements AbstractListService<Au
 	@Override
 	public Collection<Job> findMany(final Request<Job> request) {
 		assert request != null;
-
-		Collection<Job> res = this.repository.jobsAuditorHasNotWrittenAudit(request.getPrincipal().getActiveRoleId());
+		Integer id = request.getPrincipal().getActiveRoleId();
+		Collection<Job> res = this.repository.jobsAuditorHasNotWrittenAudit(id);
 
 		return res;
 	}

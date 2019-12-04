@@ -39,9 +39,9 @@ public class AuditorAuditsJobListService implements AbstractListService<Auditor,
 	@Override
 	public Collection<AuditRecord> findMany(final Request<AuditRecord> request) {
 		assert request != null;
+		Integer id = Integer.parseInt(request.getServletRequest().getParameter("id"));
 
-		Collection<AuditRecord> res = this.repository.findAuditsOfAJob(Integer.parseInt(request.getServletRequest().getParameter("id")));
-
+		Collection<AuditRecord> res = this.repository.findAuditsRecords(id);
 		return res;
 	}
 

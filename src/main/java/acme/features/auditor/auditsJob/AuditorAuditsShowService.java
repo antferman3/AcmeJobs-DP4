@@ -38,7 +38,8 @@ public class AuditorAuditsShowService implements AbstractShowService<Auditor, Au
 	public AuditRecord findOne(final Request<AuditRecord> request) {
 		assert request != null;
 
-		AuditRecord res = this.repository.findOne(request.getModel().getInteger("id"));
+		Integer id = request.getModel().getInteger("id");
+		AuditRecord res = this.repository.findOne(id);
 
 		return res;
 	}

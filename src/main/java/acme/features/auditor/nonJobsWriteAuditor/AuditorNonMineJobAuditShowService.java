@@ -37,11 +37,7 @@ public class AuditorNonMineJobAuditShowService implements AbstractShowService<Au
 	@Override
 	public Job findOne(final Request<Job> request) {
 		assert request != null;
-
 		Job res = this.repository.findOne(request.getModel().getInteger("id"));
-		res.getEmployer().getUserAccount().getRoles().size();
-		res.getDescriptor().getDuties().size();
-
 		return res;
 	}
 

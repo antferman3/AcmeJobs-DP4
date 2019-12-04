@@ -36,8 +36,4 @@ public class Auditor extends UserRole {
 	@NotBlank
 	private String				responsabilityStatement;
 
-	// Derived attributes -----------------------------------------------------
-
-	// Relationships ----------------------------------------------------------
-
 }

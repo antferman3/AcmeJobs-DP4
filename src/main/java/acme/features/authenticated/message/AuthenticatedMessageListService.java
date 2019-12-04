@@ -39,8 +39,8 @@ public class AuthenticatedMessageListService implements AbstractListService<Auth
 	@Override
 	public Collection<Message> findMany(final Request<Message> request) {
 		assert request != null;
-
-		Collection<Message> res = this.repository.findMany(Integer.parseInt(request.getServletRequest().getParameter("id")));
+		Integer id = Integer.parseInt(request.getServletRequest().getParameter("id"));
+		Collection<Message> res = this.repository.findMany(id);
 		return res;
 	}
 

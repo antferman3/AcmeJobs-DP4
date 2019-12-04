@@ -35,8 +35,8 @@ public class AuthenticatedMessageShowService implements AbstractShowService<Auth
 	@Override
 	public Message findOne(final Request<Message> request) {
 		assert request != null;
-
-		Message res = this.repository.findOne(request.getModel().getInteger("id"));
+		Integer id = request.getModel().getInteger("id");
+		Message res = this.repository.findOne(id);
 		return res;
 	}
 

@@ -32,7 +32,7 @@ public class AuthenticatedMessageThreadShowService implements AbstractShowServic
 
 		model.setAttribute("usersAccount", entity.getAuthenticateds());
 
-		request.unbind(entity, model, "title", "moment", "id");
+		request.unbind(entity, model, "title", "moment");
 
 	}
 
