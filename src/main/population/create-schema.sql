@@ -58,15 +58,6 @@
         primary key (`id`)
     ) engine=InnoDB;
 
-    create table `auditors` (
-       `id` integer not null,
-        `version` integer not null,
-        `user_account_id` integer,
-        `firm` varchar(255),
-        `responsability_statement` varchar(255),
-        primary key (`id`)
-    ) engine=InnoDB;
-
     create table `authenticated` (
        `id` integer not null,
         `version` integer not null,
@@ -429,11 +420,6 @@
 
     alter table `auditor` 
        add constraint FK_clqcq9lyspxdxcp6o4f3vkelj 
-       foreign key (`user_account_id`) 
-       references `user_account` (`id`);
-
-    alter table `auditors` 
-       add constraint FK_laye9g52ri2n2qx4i16wckydb 
        foreign key (`user_account_id`) 
        references `user_account` (`id`);
 
