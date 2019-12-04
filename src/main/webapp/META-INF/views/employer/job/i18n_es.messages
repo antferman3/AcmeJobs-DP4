@@ -3,6 +3,7 @@ employer.job.form.label.title = Título
 employer.job.form.label.deadline = Fecha de vencimiento
 employer.job.form.label.salary = Salario
 employer.job.form.label.moreInfo = Más info
+employer.job.form.label.status = Estado
 employer.job.form.label.description = Descripción
 employer.offer.form.button.return = Volver
 
